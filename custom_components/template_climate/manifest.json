@@ -1,0 +1,13 @@
+{
+  "domain": "template_climate",
+  "name": "Template Climate",
+  "codeowners": ["@holdestmade"],
+  "config_flow": true,
+  "dependencies": ["template"],
+  "documentation": "https://github.com/holdestmade/template-climate",
+  "integration_type": "helper",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/holdestmade/template-climate/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

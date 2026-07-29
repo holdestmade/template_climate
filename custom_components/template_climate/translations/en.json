@@ -1,0 +1,124 @@
+{
+  "title": "Template Climate",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add template climate",
+        "description": "Create a climate entity driven by templates. Every field except the name is optional; attributes without a template run in optimistic (assumed state) mode.",
+        "data": {
+          "name": "Name",
+          "availability": "Availability template",
+          "icon": "Icon template",
+          "picture": "Entity picture template",
+          "current_temperature_template": "Current temperature template",
+          "current_humidity_template": "Current humidity template",
+          "min_temp_template": "Minimum temperature template",
+          "max_temp_template": "Maximum temperature template",
+          "min_humidity_template": "Minimum humidity template",
+          "max_humidity_template": "Maximum humidity template",
+          "target_temperature_template": "Target temperature template",
+          "target_temperature_high_template": "Target temperature high template",
+          "target_temperature_low_template": "Target temperature low template",
+          "target_humidity_template": "Target humidity template",
+          "hvac_mode_template": "HVAC mode template",
+          "hvac_action_template": "HVAC action template",
+          "fan_mode_template": "Fan mode template",
+          "preset_mode_template": "Preset mode template",
+          "swing_mode_template": "Swing mode template",
+          "set_hvac_mode": "Set HVAC mode action",
+          "set_temperature": "Set temperature action",
+          "set_humidity": "Set humidity action",
+          "set_fan_mode": "Set fan mode action",
+          "set_preset_mode": "Set preset mode action",
+          "set_swing_mode": "Set swing mode action",
+          "modes": "HVAC modes",
+          "fan_modes": "Fan modes",
+          "preset_modes": "Preset modes",
+          "swing_modes": "Swing modes",
+          "min_temp": "Minimum temperature",
+          "max_temp": "Maximum temperature",
+          "temp_step": "Target temperature step",
+          "precision": "Display precision"
+        },
+        "data_description": {
+          "availability": "Template resolving to true/false to mark the entity (un)available.",
+          "current_temperature_template": "Template returning the current temperature, e.g. {{ states('sensor.room_temp') }}.",
+          "current_humidity_template": "Template returning the current humidity.",
+          "hvac_mode_template": "Template returning the current HVAC mode. Leave empty for optimistic mode.",
+          "hvac_action_template": "Template returning the current HVAC action (heating, cooling, idle, ...).",
+          "set_hvac_mode": "Actions run when the HVAC mode is changed. The chosen mode is available as {{ hvac_mode }}.",
+          "set_temperature": "Actions run when the target temperature is changed. Available variables: {{ temperature }}, {{ target_temp_high }}, {{ target_temp_low }}, {{ hvac_mode }}.",
+          "set_humidity": "Actions run when the target humidity is changed. Available as {{ humidity }}.",
+          "set_fan_mode": "Actions run when the fan mode is changed. Available as {{ fan_mode }}.",
+          "set_preset_mode": "Actions run when the preset mode is changed. Available as {{ preset_mode }}.",
+          "set_swing_mode": "Actions run when the swing mode is changed. Available as {{ swing_mode }}.",
+          "precision": "Precision the temperature is displayed with (0.1, 0.5 or 1.0)."
+        }
+      }
+    },
+    "error": {
+      "invalid_template": "One of the templates is invalid.",
+      "invalid_action": "One of the actions is invalid."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Edit template climate",
+        "description": "Clear a field to remove its template or action.",
+        "data": {
+          "availability": "Availability template",
+          "icon": "Icon template",
+          "picture": "Entity picture template",
+          "current_temperature_template": "Current temperature template",
+          "current_humidity_template": "Current humidity template",
+          "min_temp_template": "Minimum temperature template",
+          "max_temp_template": "Maximum temperature template",
+          "min_humidity_template": "Minimum humidity template",
+          "max_humidity_template": "Maximum humidity template",
+          "target_temperature_template": "Target temperature template",
+          "target_temperature_high_template": "Target temperature high template",
+          "target_temperature_low_template": "Target temperature low template",
+          "target_humidity_template": "Target humidity template",
+          "hvac_mode_template": "HVAC mode template",
+          "hvac_action_template": "HVAC action template",
+          "fan_mode_template": "Fan mode template",
+          "preset_mode_template": "Preset mode template",
+          "swing_mode_template": "Swing mode template",
+          "set_hvac_mode": "Set HVAC mode action",
+          "set_temperature": "Set temperature action",
+          "set_humidity": "Set humidity action",
+          "set_fan_mode": "Set fan mode action",
+          "set_preset_mode": "Set preset mode action",
+          "set_swing_mode": "Set swing mode action",
+          "modes": "HVAC modes",
+          "fan_modes": "Fan modes",
+          "preset_modes": "Preset modes",
+          "swing_modes": "Swing modes",
+          "min_temp": "Minimum temperature",
+          "max_temp": "Maximum temperature",
+          "temp_step": "Target temperature step",
+          "precision": "Display precision"
+        },
+        "data_description": {
+          "availability": "Template resolving to true/false to mark the entity (un)available.",
+          "current_temperature_template": "Template returning the current temperature, e.g. {{ states('sensor.room_temp') }}.",
+          "current_humidity_template": "Template returning the current humidity.",
+          "hvac_mode_template": "Template returning the current HVAC mode. Leave empty for optimistic mode.",
+          "hvac_action_template": "Template returning the current HVAC action (heating, cooling, idle, ...).",
+          "set_hvac_mode": "Actions run when the HVAC mode is changed. The chosen mode is available as {{ hvac_mode }}.",
+          "set_temperature": "Actions run when the target temperature is changed. Available variables: {{ temperature }}, {{ target_temp_high }}, {{ target_temp_low }}, {{ hvac_mode }}.",
+          "set_humidity": "Actions run when the target humidity is changed. Available as {{ humidity }}.",
+          "set_fan_mode": "Actions run when the fan mode is changed. Available as {{ fan_mode }}.",
+          "set_preset_mode": "Actions run when the preset mode is changed. Available as {{ preset_mode }}.",
+          "set_swing_mode": "Actions run when the swing mode is changed. Available as {{ swing_mode }}.",
+          "precision": "Precision the temperature is displayed with (0.1, 0.5 or 1.0)."
+        }
+      }
+    },
+    "error": {
+      "invalid_template": "One of the templates is invalid.",
+      "invalid_action": "One of the actions is invalid."
+    }
+  }
+}
