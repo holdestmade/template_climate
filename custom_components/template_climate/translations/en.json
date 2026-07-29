@@ -42,16 +42,16 @@
         },
         "data_description": {
           "availability": "Template resolving to true/false to mark the entity (un)available.",
-          "current_temperature_template": "Template returning the current temperature, e.g. {{ states('sensor.room_temp') }}.",
+          "current_temperature_template": "Template returning the current temperature, e.g. '{{' states('sensor.room_temp') '}}'.",
           "current_humidity_template": "Template returning the current humidity.",
           "hvac_mode_template": "Template returning the current HVAC mode. Leave empty for optimistic mode.",
           "hvac_action_template": "Template returning the current HVAC action (heating, cooling, idle, ...).",
-          "set_hvac_mode": "Actions run when the HVAC mode is changed. The chosen mode is available as {{ hvac_mode }}.",
-          "set_temperature": "Actions run when the target temperature is changed. Available variables: {{ temperature }}, {{ target_temp_high }}, {{ target_temp_low }}, {{ hvac_mode }}.",
-          "set_humidity": "Actions run when the target humidity is changed. Available as {{ humidity }}.",
-          "set_fan_mode": "Actions run when the fan mode is changed. Available as {{ fan_mode }}.",
-          "set_preset_mode": "Actions run when the preset mode is changed. Available as {{ preset_mode }}.",
-          "set_swing_mode": "Actions run when the swing mode is changed. Available as {{ swing_mode }}.",
+          "set_hvac_mode": "Actions run when the HVAC mode is changed. The chosen mode is available as '{{' hvac_mode '}}'.",
+          "set_temperature": "Actions run when the target temperature is changed. Available variables: '{{' temperature '}}', '{{' target_temp_high '}}', '{{' target_temp_low '}}', '{{' hvac_mode '}}'.",
+          "set_humidity": "Actions run when the target humidity is changed. Available as '{{' humidity '}}'.",
+          "set_fan_mode": "Actions run when the fan mode is changed. Available as '{{' fan_mode '}}'.",
+          "set_preset_mode": "Actions run when the preset mode is changed. Available as '{{' preset_mode '}}'.",
+          "set_swing_mode": "Actions run when the swing mode is changed. Available as '{{' swing_mode '}}'.",
           "precision": "Precision the temperature is displayed with (0.1, 0.5 or 1.0)."
         }
       }
@@ -102,16 +102,16 @@
         },
         "data_description": {
           "availability": "Template resolving to true/false to mark the entity (un)available.",
-          "current_temperature_template": "Template returning the current temperature, e.g. {{ states('sensor.room_temp') }}.",
+          "current_temperature_template": "Template returning the current temperature, e.g. '{{' states('sensor.room_temp') '}}'.",
           "current_humidity_template": "Template returning the current humidity.",
           "hvac_mode_template": "Template returning the current HVAC mode. Leave empty for optimistic mode.",
           "hvac_action_template": "Template returning the current HVAC action (heating, cooling, idle, ...).",
-          "set_hvac_mode": "Actions run when the HVAC mode is changed. The chosen mode is available as {{ hvac_mode }}.",
-          "set_temperature": "Actions run when the target temperature is changed. Available variables: {{ temperature }}, {{ target_temp_high }}, {{ target_temp_low }}, {{ hvac_mode }}.",
-          "set_humidity": "Actions run when the target humidity is changed. Available as {{ humidity }}.",
-          "set_fan_mode": "Actions run when the fan mode is changed. Available as {{ fan_mode }}.",
-          "set_preset_mode": "Actions run when the preset mode is changed. Available as {{ preset_mode }}.",
-          "set_swing_mode": "Actions run when the swing mode is changed. Available as {{ swing_mode }}.",
+          "set_hvac_mode": "Actions run when the HVAC mode is changed. The chosen mode is available as '{{' hvac_mode '}}'.",
+          "set_temperature": "Actions run when the target temperature is changed. Available variables: '{{' temperature '}}', '{{' target_temp_high '}}', '{{' target_temp_low '}}', '{{' hvac_mode '}}'.",
+          "set_humidity": "Actions run when the target humidity is changed. Available as '{{' humidity '}}'.",
+          "set_fan_mode": "Actions run when the fan mode is changed. Available as '{{' fan_mode '}}'.",
+          "set_preset_mode": "Actions run when the preset mode is changed. Available as '{{' preset_mode '}}'.",
+          "set_swing_mode": "Actions run when the swing mode is changed. Available as '{{' swing_mode '}}'.",
           "precision": "Precision the temperature is displayed with (0.1, 0.5 or 1.0)."
         }
       }
