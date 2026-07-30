@@ -92,8 +92,6 @@ def _number_box(step: float) -> selector.NumberSelector:
 
 # All fields shared between the create flow and the edit (options) flow.
 OPTIONS_SCHEMA_DICT: dict[Any, Any] = {
-    # optional device to link the entity to (parity with template helpers)
-    vol.Optional(CONF_DEVICE_ID): selector.DeviceSelector(),
     # entity-level templates
     vol.Optional(CONF_AVAILABILITY_TEMPLATE_KEY): TEMPLATE,
     vol.Optional(CONF_ICON_KEY): TEMPLATE,
@@ -130,6 +128,9 @@ OPTIONS_SCHEMA_DICT: dict[Any, Any] = {
             mode=selector.SelectSelectorMode.DROPDOWN,
         )
     ),
+    # optional device to link the entity to (kept last so it renders at the
+    # bottom of the dialog, matching Home Assistant's template helpers)
+    vol.Optional(CONF_DEVICE_ID): selector.DeviceSelector(),
 }
 
 CONFIG_SCHEMA = vol.Schema(
