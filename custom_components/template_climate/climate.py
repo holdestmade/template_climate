@@ -47,6 +47,7 @@ from homeassistant.config_entries import ConfigEntry  # CHANGED: added for UI co
 from homeassistant.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
+    CONF_DEVICE_ID,
     CONF_ENTITY_PICTURE_TEMPLATE,
     CONF_FRIENDLY_NAME,
     CONF_ICON,
@@ -61,7 +62,7 @@ from homeassistant.const import (
     STATE_UNKNOWN,
 )
 from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import template
+from homeassistant.helpers import device_registry as dr, template
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.reload import async_setup_reload_service
@@ -240,6 +241,9 @@ async def async_setup_platform(
 CONFIG_ENTRY_SCHEMA = vol.Schema(
     {
         vol.Required(CONF_NAME): cv.template,
+        # Optional device the entity is linked to (parity with the template
+        # sensor helper's "Device" field).
+        vol.Optional(CONF_DEVICE_ID): cv.string,
         vol.Optional(CONF_AVAILABILITY): cv.template,
         vol.Optional(CONF_ICON): cv.template,
         vol.Optional(CONF_PICTURE): cv.template,
@@ -302,6 +306,11 @@ class TemplateClimate(TemplateEntity, ClimateEntity, RestoreEntity):
     ) -> None:
         """Initialize the climate device."""
         super().__init__(hass, config, unique_id)
+
+        # Link the entity to a device selected in the config flow, mirroring
+        # the "Device" field of Home Assistant's own template helpers.
+        if (device_id := config.get(CONF_DEVICE_ID)) is not None:
+            self.device_entry = dr.async_get(hass).async_get(device_id)
 
         # set attrs
         self._attr_min_temp = config[CONF_TEMP_MIN]

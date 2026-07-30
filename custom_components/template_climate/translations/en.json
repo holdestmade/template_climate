@@ -7,6 +7,7 @@
         "description": "Create a climate entity driven by templates. Every field except the name is optional; attributes without a template run in optimistic (assumed state) mode.",
         "data": {
           "name": "Name",
+          "device_id": "Device",
           "availability": "Availability template",
           "icon": "Icon template",
           "picture": "Entity picture template",
@@ -41,6 +42,7 @@
           "precision": "Display precision"
         },
         "data_description": {
+          "device_id": "Link this entity to a device so it appears under that device instead of as a standalone helper.",
           "availability": "Template resolving to true/false to mark the entity (un)available.",
           "icon": "Template returning an icon name, such as mdi:radiator.",
           "picture": "Template returning a URL or path to a picture for the entity.",
@@ -87,6 +89,7 @@
         "title": "Edit template climate",
         "description": "Clear a field to remove its template or action.",
         "data": {
+          "device_id": "Device",
           "availability": "Availability template",
           "icon": "Icon template",
           "picture": "Entity picture template",
@@ -121,6 +124,7 @@
           "precision": "Display precision"
         },
         "data_description": {
+          "device_id": "Link this entity to a device so it appears under that device instead of as a standalone helper.",
           "availability": "Template resolving to true/false to mark the entity (un)available.",
           "icon": "Template returning an icon name, such as mdi:radiator.",
           "picture": "Template returning a URL or path to a picture for the entity.",

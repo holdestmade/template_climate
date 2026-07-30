@@ -13,7 +13,7 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_NAME
+from homeassistant.const import CONF_DEVICE_ID, CONF_NAME
 from homeassistant.helpers import config_validation as cv, selector
 from homeassistant.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
@@ -92,6 +92,8 @@ def _number_box(step: float) -> selector.NumberSelector:
 
 # All fields shared between the create flow and the edit (options) flow.
 OPTIONS_SCHEMA_DICT: dict[Any, Any] = {
+    # optional device to link the entity to (parity with template helpers)
+    vol.Optional(CONF_DEVICE_ID): selector.DeviceSelector(),
     # entity-level templates
     vol.Optional(CONF_AVAILABILITY_TEMPLATE_KEY): TEMPLATE,
     vol.Optional(CONF_ICON_KEY): TEMPLATE,
