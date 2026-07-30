@@ -47,7 +47,8 @@ This integration builds on Home Assistant's modern `template` helpers, so a reas
 1. Go to **Settings → Devices & services → Helpers**.
 2. Click **Create helper** and choose **Template Climate**.
 3. Give it a name. Every other field is optional — fill in the templates and actions you need.
-4. Edit it later at any time with the **Configure** button (fields you clear are removed).
+4. Optionally pick a **Device** to link the entity to, so it appears under that device instead of as a standalone helper (same as Home Assistant's own template helpers).
+5. Edit it later at any time with the **Configure** button (fields you clear are removed).
 
 Any attribute you leave without a state template runs in *optimistic* (assumed-state) mode: Home Assistant remembers the last value you set from the UI.
 
@@ -106,6 +107,7 @@ Each `set_*` action receives the requested value(s) as template variables:
 | Key | Description |
 | --- | --- |
 | `name` | Friendly name of the climate entity (required). |
+| `device_id` | *(UI only)* Existing device to link the entity to, so it shows up under that device. |
 | `availability` / `availability_template` | Template resolving to `true`/`false` for entity availability. |
 | `icon` / `icon_template` | Template for the entity icon. |
 | `picture` / `entity_picture_template` | Template for the entity picture. |
