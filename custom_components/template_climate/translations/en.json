@@ -164,5 +164,18 @@
       "invalid_template": "One of the templates is invalid.",
       "invalid_action": "One of the actions is invalid."
     }
+  },
+  "entity": {
+    "climate": {
+      "template_climate": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "silent": "Silent"
+            }
+          }
+        }
+      }
+    }
   }
 }
