@@ -300,6 +300,11 @@ class TemplateClimate(TemplateEntity, ClimateEntity, RestoreEntity):
     _attr_should_poll = False
     _entity_id_format = ENTITY_ID_FORMAT
     _enable_turn_on_off_backwards_compatibility = False
+    # CHANGED: makes HA look up entity translations (translations/en.json) and
+    # icon translations (icons.json) for this entity, so non-standard mode
+    # values such as "silent" get a proper label and icon in the frontend
+    # instead of being shown raw with the generic dot.
+    _attr_translation_key = "template_climate"
 
     def __init__(
         self, hass: HomeAssistant, config: ConfigType, unique_id: str | None

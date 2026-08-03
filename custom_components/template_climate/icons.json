@@ -1,0 +1,15 @@
+{
+  "entity": {
+    "climate": {
+      "template_climate": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "silent": "mdi:sleep"
+            }
+          }
+        }
+      }
+    }
+  }
+}
