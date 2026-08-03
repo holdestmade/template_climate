@@ -5,7 +5,7 @@
         "state_attributes": {
           "fan_mode": {
             "state": {
-              "silent": "mdi:sleep"
+              "silent": "mdi:fan-clock"
             }
           }
         }
