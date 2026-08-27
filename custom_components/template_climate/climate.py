@@ -41,7 +41,16 @@ from homeassistant.components.template.const import (
 from homeassistant.components.template.helpers import (
     async_create_template_tracking_entities,
 )
-from homeassistant.components.template.schemas import make_template_entity_base_schema
+try:
+    # Home Assistant 2026.9 renamed make_template_entity_base_schema
+    from homeassistant.components.template.schemas import (
+        make_template_entity_common_schema as make_template_entity_base_schema,
+    )
+except ImportError:
+    # Home Assistant 2026.8 and earlier
+    from homeassistant.components.template.schemas import (
+        make_template_entity_base_schema,
+    )
 from homeassistant.components.template.template_entity import TemplateEntity
 from homeassistant.config_entries import ConfigEntry  # CHANGED: added for UI config entry support
 from homeassistant.const import (
