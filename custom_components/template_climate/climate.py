@@ -626,7 +626,10 @@ class TemplateClimate(TemplateEntity, ClimateEntity, RestoreEntity):
     def _update_min_temp(self, temp):
         if temp not in (STATE_UNKNOWN, STATE_UNAVAILABLE):
             try:
-                self._attr_min_temp = float(temp)
+                new_temp = float(temp)
+                if new_temp != self._attr_min_temp:
+                    self._attr_min_temp = new_temp
+                    self.async_write_ha_state()
             except ValueError:
                 _LOGGER.error("Could not parse min temperature from %s", temp)
 
@@ -634,7 +637,10 @@ class TemplateClimate(TemplateEntity, ClimateEntity, RestoreEntity):
     def _update_max_temp(self, temp):
         if temp not in (STATE_UNKNOWN, STATE_UNAVAILABLE):
             try:
-                self._attr_max_temp = float(temp)
+                new_temp = float(temp)
+                if new_temp != self._attr_max_temp:
+                    self._attr_max_temp = new_temp
+                    self.async_write_ha_state()
             except ValueError:
                 _LOGGER.error("Could not parse max temperature from %s", temp)
 
