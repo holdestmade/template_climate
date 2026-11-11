@@ -171,9 +171,8 @@ async def _validate_user_input(
             except vol.Invalid as err:
                 raise SchemaFlowError("invalid_action") from err
 
-    # precision arrives as a string from the select dropdown
-    if user_input.get(CONF_PRECISION) not in (None, ""):
-        user_input[CONF_PRECISION] = float(user_input[CONF_PRECISION])
+    # Keep precision as a string: the config-flow selector expects strings.
+    # The climate entity schema converts it to float when it is consumed.
 
     return user_input
 
